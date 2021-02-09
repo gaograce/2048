@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2048</title>
+</head>
+<body>
+<script defer src="jquery.min.js"></script>
+<script defer src="main.js"></script>
+<div id="result" style="position: absolute;top:0;left:0;background: rgba(0, 0, 0, 0.8);width: 100%; height: 100%;z-index:9999;display: none">
+  <div style="color: white;position: absolute;top: 50%;left:50%;transform: translate(-50%, -50%);font-size: 50px">
+    <div id="fail" style="padding: 10px;margin-bottom: 20px;">Game Over!</div>
+    <div id="success" style="padding: 10px;margin-bottom: 20px;">You Are Win!</div>
+    <span style="display:block;font-size: 10px;padding: 10px; background: white; color: grey;cursor: pointer;border-radius: 5px;border: 1px solid #eee;"
+          onclick="restart()">Restart</span>
+  </div>
+</div>
+<div style="position: absolute;top: 50%;left:50%;transform: translate(-50%, -50%);text-align: left">
+  <div style="margin-bottom: 20px;"><span style="font-size: 40px;color: #555;padding: 10px;">2048</span>
+    <span style="float: right;padding: 10px;margin-top: 10px;background: grey;color: white;border-radius: 5px;"><span style="">Score:</span><span id="score" style="margin-left: 10px;">0</span></span></div>
+  <table id="main" border="1" cellspacing="10" style="background: #EEEEEE;width: 466px;height: 466px;border-radius: 5px;">
+    <tr>
+      <td style="width:100px;height:100px;background: white;"></td>
+      <td style="width:100px;height:100px;background: white;"></td>
+      <td style="width:100px;height:100px;background: white;"></td>
+      <td style="width:100px;height:100px;background: white;"></td>
+    </tr>
+    <tr>
+      <td style="width:100px;height:100px;background: white;"></td>
+      <td style="width:100px;height:100px;background: white;"></td>
+      <td style="width:100px;height:100px;background: white;"></td>
+      <td style="width:100px;height:100px;background: white;"></td>
+    </tr>
+    <tr>
+      <td style="width:100px;height:100px;background: white;"></td>
+      <td style="width:100px;height:100px;background: white;"></td>
+      <td style="width:100px;height:100px;background: white;"></td>
+      <td style="width:100px;height:100px;background: white;"></td>
+    </tr>
+    <tr>
+      <td style="width:100px;height:100px;background: white;"></td>
+      <td style="width:100px;height:100px;background: white;"></td>
+      <td style="width:100px;height:100px;background: white;"></td>
+      <td style="width:100px;height:100px;background: white;"></td>
+    </tr>
+  </table>
+</div>
+
+<style>
+  html, body {
+    height: 100%;
+    text-align: center;
+  }
+</style>
+</body>
+</html>
