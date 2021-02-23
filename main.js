@@ -16,7 +16,7 @@ let numIndex = {
 
 let divs = [[],[],[],[]]
 let score = 0
-
+let gameOver = false
 function start () {
   randomAddNumm ()
   randomAddNumm ()
@@ -33,6 +33,7 @@ function restart() {
   divs = [[],[],[],[]]
   result.style.display = 'none'
   updateScore(-score)
+  gameOver = false
   start()
 }
 
@@ -108,6 +109,9 @@ function traverseRow (row, reverse = false) {
 }
 
 document.addEventListener('keyup', e => {
+  if(gameOver) {
+    return
+  }
   if(e.key === 'ArrowUp') {
     for(let j = 0; j < 4; j++) {
       traverseColumn(j)
@@ -141,6 +145,7 @@ document.addEventListener('keyup', e => {
 
 function checkIfWin() {
   if(isWin()) {
+    gameOver = true
     setTimeout(() => {
       result.style.display = 'block'
       document.getElementById('fail').style.display = 'none'
@@ -162,6 +167,7 @@ function isWin() {
 
 function checkIfGameOver() {
   if(isGameOver()) {
+    gameOver = true
     setTimeout(() => {
       result.style.display = 'block'
       document.getElementById('fail').style.display = 'block'
